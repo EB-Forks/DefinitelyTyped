@@ -19,16 +19,16 @@ const SimpleCallback = (err: any, html?: string) => {
     if (err) {
         return null;
     }
-    return html;
+    return html!;
 };
 
 result = ejs.render(template);
 result = ejs.render(template, data);
 result = ejs.render(template, data, options);
 
-result = ejs.renderFile(fileName, SimpleCallback);
-result = ejs.renderFile(fileName, data, SimpleCallback);
-result = ejs.renderFile(fileName, data, options, SimpleCallback);
+result = ejs.renderFile(fileName, SimpleCallback)!;
+result = ejs.renderFile(fileName, data, SimpleCallback)!;
+result = ejs.renderFile(fileName, data, options, SimpleCallback)!;
 asyncResult = ejs.renderFile(fileName);
 asyncResult = ejs.renderFile(fileName, data);
 asyncResult = ejs.renderFile(fileName, data, options);

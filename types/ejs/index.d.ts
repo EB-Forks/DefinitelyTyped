@@ -43,7 +43,7 @@ export function render(template: string, data: Data | undefined, opts: Options &
 export function render(template: string, data: Data | undefined, opts: Options & { async?: never }): string;
 export function render(template: string, data?: Data, opts?: Options): string | Promise<string>;
 
-export type RenderFileCallback<T> = (err: Error, str?: string) => T;
+export type RenderFileCallback<T> = (err: Error | null, str?: string) => T;
 
 /**
  * Render an EJS file at the given `path` and callback `cb(err, str)`.
